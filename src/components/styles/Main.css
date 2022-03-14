@@ -19,13 +19,18 @@ p {
 }
 .input-control {
     display: block;
-    width: 25%;
     padding: 8px 16px;
     line-height: 25px;
     font-family: inherit;
     -webkit-appearance: none;
     border: transparent;
     transition: border .3s ease;
+}
+.input-width {
+    width: 65%;    
+}
+.select-width {   
+    width: 25%; 
 }
 .border-left{
     border-radius: 0 6px 6px 0;
@@ -36,7 +41,7 @@ p {
 .input-control:focus {
     outline: none;
 }
-.input-group>.input-control/* , .input-group>.input-select  */{
+.input-group>.input-control{
     position: relative;
     min-width: 0;
 }
@@ -51,12 +56,12 @@ p {
     white-space: nowrap;
     border: transparent;
 }
-.row{
+.display-lg{
     display: flex;
 }
 .float-right{
-    float: right;
-    margin: 0 10px 10px 0; /* for demo only */
+    justify-content: flex-end;
+    margin-right: 50px;
 }
 .mt-icon{
     margin-top: 20px;
@@ -77,25 +82,25 @@ p {
     background-color: #ffffff;
     color : #111517;
 }
-.dark > #root > .section > .row > .bg {
+.dark > #root > .section > .grid-container > .bg {
     background-color: #2b3945;
 }
-.dark > #root > .section > .row > .input-group > .input-control {
-    background-color: #2b3945;
-    color: #ffffff;
-}
-.dark > #root > .section > .row > .input-group > .input-control-icon {
+.dark > #root > .section > .display > .input-group > .input-control {
     background-color: #2b3945;
     color: #ffffff;
 }
-.light > #root > .section > .row > .bg {
+.dark > #root > .section > .display > .input-group > .input-control-icon {
+    background-color: #2b3945;
+    color: #ffffff;
+}
+.light > #root > .section > .grid-container > .bg {
     background-color: #ffffff;
 }
-.light > #root > .section > .row > .input-group > .input-control {
+.light > #root > .section > .display > .input-group > .input-control {
     background-color: #ffffff;
     color: #111517;
 }
-.light > #root > .section > .row > .input-group > .input-control-icon {
+.light > #root > .section > .display > .input-group > .input-control-icon {
     background-color: #ffffff;
     color: #111517;
 }
@@ -135,7 +140,7 @@ p {
 }
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
     padding: 10px;
 }
 .grid-item {
@@ -170,7 +175,7 @@ p {
 .nav > .nav-header > .nav-title {
     display: inline-block;
     letter-spacing: 1px;
-    padding: 20px 10px 20px 65px;
+    padding: 20px 10px 20px 75px;
 }        
 .nav > .nav-links {
     display: inline;
@@ -189,12 +194,19 @@ p {
 .p-element-left {    
     padding: 10px 0 0 50px;    
 }
-.element-center {
-    display: flex;
-    justify-content: center;
+.grey {
+    color:grey;
 }
-
+.text-center{
+    text-align: center;
+}
+.mt-5{
+    margin-top: 30px;
+}
 @media (min-width : 768px) and (max-width : 979px) {
+    .display-md{
+        display: flex;
+    }
     .nav {
         height: 65px;
         width: 100%;
@@ -226,17 +238,16 @@ p {
         margin-left: auto; 
     }
     .grid-container {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 33% 33% 34%;
     }
     .p-element-left-md {    
-        padding: 30px 0 0 0px;    
-    }
-    .element-center-md {
-        display: flex;
-        justify-content: center;
+        padding: 30px 0 0 50px;    
     }
 }
 @media (min-width : 520px) and (max-width : 767px) {
+    .display-sm{
+        display: block;
+    }
     .nav {
         height: 65px;
         width: 100%;
@@ -265,17 +276,19 @@ p {
         margin-left: auto; 
     }
     .grid-container {
-        grid-template-columns: auto auto;
+        grid-template-columns: 50% 50%;
     }
     .p-element-left-sm {    
         padding: 30px 0 0 0;    
     }
     .element-center-sm {
-        display: flex;
         justify-content: center;
     }
 }
 @media (max-width : 519px) {
+    .display-xs{
+        display: block;
+    }
     .nav {
         height: 65px;
         width: 100%;
@@ -318,7 +331,6 @@ p {
         padding: 30px 0 0 0;    
     }
     .element-center-xs {
-        display: flex;
         justify-content: center;
     }
     .fw-title-xs {

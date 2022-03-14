@@ -21,7 +21,7 @@ const Navbar = ({handleToggle, title}) => {
                             {title}
                         </div>
                     </div>                    
-                    <div class="nav-links">
+                    <div className="nav-links">
                         <FeatherIcon size="11" icon={toggleIcon}/><button className={btnClass} onClick={handleToggle} target="_blank" rel="noreferrer">{btnText}</button>                
                     </div>
                 </div>

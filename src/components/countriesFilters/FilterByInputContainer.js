@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import FilterByInput from './FilterByInput';
-import regions from "./Regions";
 
 const FilterByInputContainer = () => {
 
     /* Creating search input state */
-    const [filterBy, setFilterBy] = useState(0);
+    const [filterBy, setFilterBy] = useState(null);
     
     /* handle input arrow function to set the search input everytime we type on it */
     const handleInput = (e) => {
@@ -16,7 +15,6 @@ const FilterByInputContainer = () => {
     return <FilterByInput
                 handleInput={handleInput}
                 filterBy={filterBy}
-                regions={regions}
            />
     
 }
