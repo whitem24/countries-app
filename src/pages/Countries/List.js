@@ -2,6 +2,8 @@ import React from 'react';
 import '../../components/styles/Main.css';
 import Navbar from '../../components/navbar/NavbarContainer';
 import CurrencyFormat from 'react-currency-format';
+import SearchInput from '../../components/countriesFilters/SearchInputContainer';
+import FilterByInput from '../../components/countriesFilters/FilterByInputContainer';
 
 const List = ({data}) => {
 console.log(data);
@@ -23,8 +25,15 @@ let countries = data.map(c => {
 
 return  (<>
             <Navbar/>
-            <div className="section grid-container">
-                {countries}
+            <div className="section">
+                <div className="row">
+                    <SearchInput/>
+                    <FilterByInput/>
+                </div>
+                <div className="grid-container">
+                    {/* Calling search input filter */}                    
+                    {countries}
+                </div>
             </div>
         </>)
 }

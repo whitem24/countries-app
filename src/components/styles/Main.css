@@ -1,74 +1,143 @@
 /* Main tags styles */
 
-body{   
+body {   
     overflow-x: hidden;
     font-family: 'Nunito Sans';
 }
-p{
+p {
     margin-top:2px;
     margin-bottom:2px;
 }
 
 /* Main tags Styles */
-
-.dark{
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+.input-control {
+    display: block;
+    width: 25%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-family: inherit;
+    -webkit-appearance: none;
+    border: transparent;
+    transition: border .3s ease;
+}
+.border-left{
+    border-radius: 0 6px 6px 0;
+}
+.border-right{
+    border-radius: 6px 0 0 6px;
+}
+.input-control:focus {
+    outline: none;
+}
+.input-group>.input-control/* , .input-group>.input-select  */{
+    position: relative;
+    min-width: 0;
+}
+.input-control-icon {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    border: transparent;
+}
+.row{
+    display: flex;
+}
+.float-right{
+    float: right;
+    margin: 0 10px 10px 0; /* for demo only */
+}
+.mt-icon{
+    margin-top: 20px;
+}
+.dark {
     background-color: #202c37;
     color : #ffffff
 }
-.dark-nav{
+.dark-nav {
     background-color: #2b3945;
     color: #ffffff;
 }
-.light{
+.light {
     background-color: #fafafa;
     color : #111517;
 }
-.light-nav{
+.light-nav {
     background-color: #ffffff;
     color : #111517;
 }
-.dark > #root > .section > .bg{
+.dark > #root > .section > .row > .bg {
     background-color: #2b3945;
 }
-.light > #root > .section > .bg{
+.dark > #root > .section > .row > .input-group > .input-control {
+    background-color: #2b3945;
+    color: #ffffff;
+}
+.dark > #root > .section > .row > .input-group > .input-control-icon {
+    background-color: #2b3945;
+    color: #ffffff;
+}
+.light > #root > .section > .row > .bg {
     background-color: #ffffff;
 }
-.background-dark{
+.light > #root > .section > .row > .input-group > .input-control {
+    background-color: #ffffff;
+    color: #111517;
+}
+.light > #root > .section > .row > .input-group > .input-control-icon {
+    background-color: #ffffff;
+    color: #111517;
+}
+.background-dark {
     background-color: #2b3945;
 }
-.background-light{
+.background-light {
     background-color: #ffffff;
 }
-.btn-mode{
+.btn-mode {
     border: none;
     background-color: transparent;
 }
-.text-light{   
+.text-light {   
     color: #ffffff;
 }
-.text-dark{
+.text-dark {
     color: #111517;
 }
-.fw-title{
+.fw-title {
     font-weight:800;
 }
-.fz-subtitle{
+.fz-title {
+    font-size: 17px;
+}
+.fz-subtitle {
     font-size:15px;
 }
-.fw-subtitle{
+.fw-subtitle {
     font-weight:600;
 }
-.fw-text{
+.fw-text {
     font-weight:300;
 }
-.icon-margin{
+.icon-margin {
     margin-top: 5px;
 }
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 10px;
-  }
+}
 .grid-item {
     margin: 40px;
     font-size: 14px;
@@ -80,14 +149,14 @@ p{
     height: 45%;
     border-radius: 5px 5px 0px 0px;
 }
-.padding-description{
+.padding-description {
     padding : 10px 0px 20px 20px;
 }
-.margin-subtitle{
+.margin-subtitle {
     margin-bottom:15px;
     margin-top:10px;
 }
-.ls-subtitle{
+.ls-subtitle {
     letter-spacing: 1px;
 }
 .nav {
@@ -98,131 +167,162 @@ p{
 .nav > .nav-header {
     display: inline;
 }
-
 .nav > .nav-header > .nav-title {
     display: inline-block;
-    font-size: 17px;
     letter-spacing: 1px;
-    padding: 20px 10px 20px 110px;
+    padding: 20px 10px 20px 65px;
 }        
 .nav > .nav-links {
     display: inline;
     float: right;
-    font-size: 18px;
 }
-
 .nav > .nav-links {
     display: inline-block;
     padding: 20px 70px 20px 10px;
     text-decoration: none;
 }
-
 .section {
-    padding: 30px 30px 10px 70px;
+    padding: 30px 30px 10px 25px;
     margin-right: auto;
     margin-left: auto; 
+}
+.p-element-left {    
+    padding: 10px 0 0 50px;    
+}
+.element-center {
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width : 768px) and (max-width : 979px) {
     .nav {
-    height: 50px;
-    width: 100%;
-    position: relative;
+        height: 65px;
+        width: 100%;
+        position: relative;
     }
     .nav > .nav-header {
         display: inline;
     }
-    
     .nav > .nav-header > .nav-title {
-    display: inline-block;
-    font-size: 17px;
-    padding: 10px 10px 10px 50px;
+        display: inline-block;
+        padding: 20px 10px 20px 65px;
     }
         
     .nav > .nav-links {
-    display: inline;
-    float: right;
-    font-size: 18px;
+        display: inline;
+        float: right;
+        font-size: 18px;
     }
     
     .nav > .nav-links {
-    display: inline-block;
-    padding: 10px 50px 10px 10px;
-    text-decoration: none;
+        display: inline-block;
+        padding: 20px 70px 20px 10px;
+        text-decoration: none;
     }
 
     .section {
-    padding: 10px 30px 10px 50px;
-    margin-right: auto;
-    margin-left: auto; 
+        padding: 10px 30px 10px 25px;
+        margin-right: auto;
+        margin-left: auto; 
+    }
+    .grid-container {
+        grid-template-columns: auto auto auto;
+    }
+    .p-element-left-md {    
+        padding: 30px 0 0 0px;    
+    }
+    .element-center-md {
+        display: flex;
+        justify-content: center;
     }
 }
-@media (min-width : 576px) and (max-width : 767px) {
+@media (min-width : 520px) and (max-width : 767px) {
     .nav {
-    height: 50px;
-    width: 100%;
-    position: relative;
+        height: 65px;
+        width: 100%;
+        position: relative;
     }
     .nav > .nav-header {
         display: inline;
-    }
-    
+    }    
     .nav > .nav-header > .nav-title {
-    display: inline-block;
-    font-size: 17px;
-    padding: 10px 10px 10px 30px;
-    }
-        
+        display: inline-block;
+        padding: 20px 10px 20px 70px;
+    }        
     .nav > .nav-links {
-    display: inline;
-    float: right;
-    font-size: 18px;
-    }
-    
+        display: inline;
+        float: right;
+        font-size: 18px;
+    }    
     .nav > .nav-links {
-    display: inline-block;
-    padding: 10px 30px 10px 10px;
-    text-decoration: none;
+        display: inline-block;
+        padding: 20px 70px 20px 10px;
+        text-decoration: none;
     }
-
     .section {
-    padding: 10px 30px 10px 30px;
-    margin-right: auto;
-    margin-left: auto; 
+        padding: 10px 30px 10px 30px;
+        margin-right: auto;
+        margin-left: auto; 
+    }
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+    .p-element-left-sm {    
+        padding: 30px 0 0 0;    
+    }
+    .element-center-sm {
+        display: flex;
+        justify-content: center;
     }
 }
-@media (min-width : 375px) and (max-width : 575px) {
+@media (max-width : 519px) {
     .nav {
-    height: 50px;
-    width: 100%;
-    position: relative;
+        height: 65px;
+        width: 100%;
+        position: relative;
     }
     .nav > .nav-header {
         display: inline;
-    }
-    
+    }    
     .nav > .nav-header > .nav-title {
-    display: inline-block;
-    font-size: 17px;
-    padding: 10px 10px 10px 10px;
-    }
-        
+        display: inline-block;
+        padding: 20px 10px 20px 20px;
+    }        
     .nav > .nav-links {
-    display: inline;
-    float: right;
-    font-size: 18px;
-    }
-    
+        display: inline;
+        float: right;
+        font-size: 18px;
+    }    
     .nav > .nav-links {
-    display: inline-block;
-    padding: 10px 10px 10px 10px;
-    text-decoration: none;
-    
+        display: inline-block;
+        padding: 20px 20px 20px 10px;
+        text-decoration: none;
     }
     .section {
-    padding: 10px 10px 10px 10px;
-    margin-right: auto;
-    margin-left: auto; 
+        padding: 10px 10px 10px 10px;
+        margin-right: auto;
+        margin-left: auto; 
+    }    
+    .grid-container {
+        grid-template-columns: auto;
+    }
+    .fz-title-sm {
+        font-size: 12px;
+        margin-top:5px;
+    }    
+    .fz-text-sm {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+    .p-element-left-xs {    
+        padding: 30px 0 0 0;    
+    }
+    .element-center-xs {
+        display: flex;
+        justify-content: center;
+    }
+    .fw-title-xs {
+        font-weight:600;
     }
     
 }
