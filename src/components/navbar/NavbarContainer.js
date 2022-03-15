@@ -15,7 +15,6 @@ const NavbarContainer = () => {
             body.classList.add(localStorage.getItem("mode"));
             localStorage.setItem("mode",localStorage.getItem("mode"));
         }
-        console.log("evnt")
     }, [])
    
     const handleToggle = () => {
