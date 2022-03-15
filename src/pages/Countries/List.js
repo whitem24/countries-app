@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../components/styles/Main.css';
+import '../../components/styles/Loading.css';
 import Navbar from '../../components/navbar/NavbarContainer';
 import CurrencyFormat from 'react-currency-format';
 import SearchInput from '../../components/countriesFilters/SearchInput';

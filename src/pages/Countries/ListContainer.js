@@ -15,7 +15,7 @@ const [filterBy, setFilterBy] = useState('');
 let url = `${baseUrl}/all`;
 
 /* Calling the GET hook */
-let {data, loading} = useGet(url);
+const { data, loading } = useGet(url);
 
 /* Function to capitalize search param for better UX at searching */
 var toCapital = function toCapital(val) {
@@ -45,7 +45,8 @@ const handleSelect = (e) => {
 
 /* While we wait */
 if(loading)
-    <Loading/>
+    return <Loading/>
+
 
 return <List data = {dataFiltered}
              handleInput = {handleInput}

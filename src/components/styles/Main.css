@@ -68,7 +68,13 @@ p {
 }
 .dark {
     background-color: #202c37;
-    color : #ffffff
+    color : #ffffff !important;
+}
+.dark * p {
+    color : #ffffff;
+}
+.light * p {
+    color : #111517 !important;
 }
 .dark-nav {
     background-color: #2b3945;
@@ -76,7 +82,7 @@ p {
 }
 .light {
     background-color: #fafafa;
-    color : #111517;
+    color : #111517 !important;
 }
 .light-nav {
     background-color: #ffffff;
@@ -233,7 +239,7 @@ p {
     margin : 30px 0 0 40px;
 }
 .grid-container-area > div {
-    padding: 20px 0;
+    padding: 0;
 }
 
 .flag-grid {
@@ -270,7 +276,7 @@ p {
 .fz-title-details{
     font-size: 20px;
 }
-.btn{    
+.btn {    
   display: inline-flex;
   border: 1px;
   text-decoration: none;
@@ -280,11 +286,24 @@ p {
   margin: 5px 5px 5px 5px;
   font-size: 10px;
 }
+.light > #root > .section > .display > .border-shadow {
+    box-shadow: 0 0 4px #909aa3;
+}
+.dark > #root > .section > .display > .border-shadow {
+    box-shadow: 0 0 4px #111517;
+}
 .btn-margin{
     margin : 30px 0 0 50px;
 }
+
+.btn-padding{
+    padding: 7px 25px 7px 25px;
+}
 .margin-r5{
     margin-right: 5px;
+}
+.display-element{
+    display: inline;
 }
 @media (min-width : 768px) and (max-width : 979px) {
     .display-md{
@@ -373,12 +392,27 @@ p {
     .element-center-sm {
         justify-content: center;
     }
+
     /* Country borders styles */
-    .grid-container-area {
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        padding: 10px;
-        margin : 30px 0 0 40px;
+    .grid-container-area-sm {
+        display: block;
+        padding: 0;
+        margin : 30px 0 0 50px;
+    }
+    .flag-sm {
+        width: 90%;
+        height: auto;
+    }
+    .desc2-grid-sm {
+        margin: 50px 0 0 0;
+    }
+    .border-grid-sm {
+        margin: 50px 0 0 0;
+        grid-area: 2 / 3 / span 1 / span 2;
+    }
+    .display-element-sm{
+        display: block;
+        margin: 0 0 15px 0;
     }
 }
 @media (max-width : 519px) {
@@ -431,6 +465,28 @@ p {
     }
     .fw-title-xs {
         font-weight:600;
+    }
+
+    /* Country borders styles */
+    .grid-container-area-xs {
+        display: block;
+        padding: 0;
+        margin : 30px 0 0 50px;
+    }
+    .flag-xs {
+        width: 90%;
+        height: auto;
+    }
+    .desc2-grid-xs {
+        margin: 50px 0 0 0;
+    }
+    .border-grid-xs {
+        margin: 50px 0 0 0;
+        grid-area: 2 / 3 / span 1 / span 2;
+    }
+    .display-element-xs{
+        display: block;
+        margin: 0 0 15px 0;
     }
     
 }

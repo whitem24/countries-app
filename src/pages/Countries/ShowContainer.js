@@ -17,7 +17,6 @@ const {data, loading, borders} = useGetDetails(url);
 
 const [dataBorders, setDataborders] = useState([]);
 
-
 /* Function to get border countries names*/
 const fetchBorders = async (code) => {
 
@@ -43,20 +42,21 @@ useEffect(() => {
 
     const bordersArray = async () => {
         const res = [];
-        for (const b of borders) {
-            const border = await fetchBorders(b.toLowerCase());
-            res.push(border);
+        if(borders.length>0){
+            for (const b of borders) {
+                const border = await fetchBorders(b.toLowerCase());
+                res.push(border);
+            }
+            setDataborders(res);
         }
-        setDataborders(res);
         return res;    
     }
     bordersArray();
 }, [borders])
 
 /* While we wait */
-
 if(loading)
-    <Loading/>
+    return <Loading/>
 
 return <Show 
             data={data}
